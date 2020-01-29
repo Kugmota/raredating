@@ -102,7 +102,7 @@ app.get('/sendMessage/:name/:req', (req, res) => {
   })
 })
 
-//For Deleting users post
+//For Admin/Users deleting post
 app.get('/deletepost/:title', (req, res) => {
   MongoClient.connect(url, (err, db) => {
     var dbo = db.db("rareDatabase");
@@ -111,7 +111,6 @@ app.get('/deletepost/:title', (req, res) => {
     })
   })
 })
-
 //For Adding an admin account
 app.post('/adminadd', (req, res) => {
   console.log(req.body)

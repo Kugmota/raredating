@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.http.showAllPosts().subscribe(data => {
+      console.log(data)
       this.arrayOfPost = data
     })
     this.sub = this.route.params.subscribe(params => {
@@ -51,7 +52,7 @@ export class HomeComponent implements OnInit {
     this.http.acceptOffer(user.username, this.name).subscribe(data => {
       this.http.userDataWhoPost(data).subscribe(userData => {
         this.userDetails = userData
-        this.http.deletePost(user.username).subscribe(res => {
+        this.http.deletePost(user.title).subscribe(res => {
         })
       })
     })
